@@ -16,11 +16,7 @@ const userSchema = mongoose.Schema({
         required:true,
         minlenght:6
     },
-    confirmpassword:{
-        type:String,
-        required:true,
-        minlenght:6
-    },
+  
 
     firstname:{
         type:String,

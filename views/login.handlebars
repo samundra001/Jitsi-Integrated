@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+   
+    <script >
+ 
+    
+function hidden(){
+        var allcookies = document.cookie;
+        var hidden= document.getElementsByClassName("hidden");
+        var show = document.getElementsByClassName("show");
+       for (var i = 0; i < hidden.length; i++)
+        {
+            if (allcookies !== "") {
+               hidden[i].style.display = "none"
+              }
+              else{
+               hidden[i].style.display= "block"
+              }
+            }  
+          
+         if (allcookies !== "") {
+          document.getElementById("show").style.display="block"
+        }
+        else{
+          document.getElementById("show").style.display="none"
+        }
+      }
+      
+          
+   
+  </script>
+  
+</head>
+<body onload="hidden() ">
+        {{#if message}}
+    <div style="text-align: center" class="alert alert-{{message.type}}">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>{{message.intro}}</strong> {{message.message}}
+    </div>
+
+    {{/if}}
+
+  <nav class="navbar navbar-expand-lg navStyle">
+    <a class="brand-navbar" href="/"><img src="img/logo.png" alt="Responsive image" height="60px"></a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#mainMenu">
+        <span><i class="fas fa-align-right iconStyle"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainMenu">
+        <ul class="navbar-nav ml-auto navList">
+            <li class="nav-item active"><a href="/" class="nav-link"><i class="fa fa-home"></i>HOME<span class="sr-only">(current)</span></a></li>
+         
+            <li class="nav-item">
+              <a href="/room" class="nav-link"><i class="fa fa-play"></i>Chat Room</a>
+          </li>
+            <li class="nav-item">
+                <a href="/" class="nav-link"><i class="fa fa-cogs"></i>Services</a>
+            </li>
+          
+            <li class="nav-item">
+                <a href="/" class="nav-link"><i class="fa fa-phone"></i>Contact</a>
+            </li>
+            <li class="nav-item">
+                <a href="/" class="nav-link"><i class="fa fa-users"></i>About</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav ml-auto justify-content-end">
+          <li class="nav-item"   >
+            <a class="nav-link text-success"  href="/login" ><span class="hidden"><i class="fa fa-sign-in" >login</i> </span></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-success " href="/register"><span class="hidden"><i class="fa fa-user-plus">Signup</i></span></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-success "  href="/logout"  ><span id="show"><i class="fa fa-sign-out">Sign out</i></a>
+          </li>
+     
+      </ul>
+    </div>
+</nav>
+    <div class="col-md-4 col-md-offset-4" id="login">
+        <section id="inner-wrapper" class="login">
+           
+                <form action="/login" method="POST"  >
+             
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope"> </i></span>
+                            <input type="email"  name="email" id="email"  class="form-control" placeholder="Email Address" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-key"> </i></span>
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+                        </div>
+                    </div>
+                 
+                      <button type="submit" class="btn btn-success btn-block">Submit</button>
+                </form>
+                <h5>dont have a account <a href="/register">click here</a></h5>
+        
+        </section></div>
+
+        <footer id="dk-footer" class="dk-footer">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12 col-lg-4">
+                      <div class="dk-footer-box-info">
+                          <a href="/" class="footer-logo">
+                              <img src="img/logo.png" alt="footer_logo" class="img-fluid">
+                          </a>
+                          <p class="footer-info-text">
+                             Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.
+                          </p>
+                          <div class="footer-social-link">
+                              <h3>Follow us</h3>
+                              <ul>
+                                  <li>
+                                      <a href="#">  
+                                          <i class="fa fa-facebook"></i>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="#">
+                                          <i class="fa fa-twitter"></i>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="#">
+                                          <i class="fa fa-google-plus"></i>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="#">
+                                          <i class="fa fa-linkedin"></i>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="#">
+                                          <i class="fa fa-instagram"></i>
+                                      </a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <!-- End Social link -->
+                      </div>
+                      <!-- End Footer info -->
+                   
+                  </div>
+                  <!-- End Col -->
+                  <div class="col-md-12 col-lg-8">
+                      <div class="row">
+                          <div class="col-md-6">
+                              <div class="contact-us">
+                                  <div class="contact-icon">
+                                      <i class="fa fa-map-o" aria-hidden="true"></i>
+                                  </div>
+                                  <!-- End contact Icon -->
+                                  <div class="contact-info">
+                                      <h3>Location write here</h3>
+                                      <p>5353 Road Avenue</p>
+                                  </div>
+                                  <!-- End Contact Info -->
+                              </div>
+                              <!-- End Contact Us -->
+                          </div>
+                          <!-- End Col -->
+                          <div class="col-md-6">
+                              <div class="contact-us contact-us-last">
+                                  <div class="contact-icon">
+                                      <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                  </div>
+                                  <!-- End contact Icon -->
+                                  <div class="contact-info">
+                                      <h3>Phone number here</h3>
+                                      <p>Give us a call</p>
+                                  </div>
+                                  <!-- End Contact Info -->
+                              </div>
+                              <!-- End Contact Us -->
+                          </div>
+                          <!-- End Col -->
+                      </div>
+                      <!-- End Contact Row -->
+                      <div class="row">
+                          <div class="col-md-12 col-lg-6">
+                              <div class="footer-widget footer-left-widget">
+                                  <div class="section-heading">
+                                      <h3>Useful Links</h3>
+                                      <span class="animate-border border-black"></span>
+                                  </div>
+                                  <ul>
+                                      <li>
+                                          <a href="/">About us</a>
+                                      </li>
+                                      <li>
+                                          <a href="/">Services</a>
+                                      </li>
+                                
+                                      <li>
+                                          <a href="/room">Chat room</a>
+                                      </li>
+                                  </ul>
+                                  <ul>
+                                      <li>
+                                          <a href="/">Contact us</a>
+                                      </li>
+                                    
+                                  
+                                  </ul>
+                              </div>
+                              <!-- End Footer Widget -->
+                          </div>
+                          <!-- End col -->
+                          <div class="col-md-12 col-lg-6">
+                              <div class="footer-widget">
+                                  <div class="section-heading">
+                                      <h3>Subscribe</h3>
+                                      <span class="animate-border border-black"></span>
+                                  </div>
+                                  <p><!-- Don’t miss to subscribe to our new feeds, kindly fill the form below. -->
+                                  Reference site about Lorem Ipsum, giving information on its origins, as well.</p>
+                                 
+                                  <!-- End form -->
+                              </div>
+                              <!-- End footer widget -->
+                          </div>
+                          <!-- End Col -->
+                      </div>
+                      <!-- End Row -->
+                  </div>
+                  <!-- End Col -->
+              </div>
+              <!-- End Widget Row -->
+          </div>
+          <!-- End Contact Container -->
+    
+    
+          <div class="copyright">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <span>Copyright © 2019, All Right Reserved Seobin</span>
+                      </div>
+                      <!-- End Col -->
+                      <div class="col-md-6">
+                          <div class="copyright-menu">
+                              <ul>
+                                  <li>
+                                      <a href="#">Home</a>
+                                  </li>
+                                  <li>
+                                      <a href="#">Terms</a>
+                                  </li>
+                                  <li>
+                                      <a href="#">Privacy Policy</a>
+                                  </li>
+                                  <li>
+                                      <a href="#">Contact</a>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                      <!-- End col -->
+                  </div>
+                  <!-- End Row -->
+              </div>
+              <!-- End Copyright Container -->
+          </div>
+          <!-- End Copyright -->
+          <!-- Back to top -->
+          <div id="back-to-top" class="back-to-top">
+              <button onclick="topFunction()" id="myBtn" class="btn btn-dark" title="Go to Top" style="display: block;">
+                  <i class="fa fa-angle-up"></i>
+              </button>
+          </div>
+          <!-- End Back to top -->
+    </footer>
+</body>
+<script>
+     mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+
+
+  
+</script>
+</html>

@@ -11,6 +11,7 @@ let auth = (req,res,next)=>{
             res.render('login')
         }
         req.token = token;
+        
         req.user = user;
         next();
      })
